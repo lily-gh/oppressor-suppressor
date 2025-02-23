@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Word Replacer",
+    "version": "1.0",
+    "description": "Makes news outlets easier to digest.",
+    "permissions": ["activeTab"],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "icons": {
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "action": {
+      "default_icon": "icon.png",
+      "default_title": "Word Replacer"
+    },
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "word-replacer@example.com",
+        "strict_min_version": "109.0"
+      }
+    }
+  }
