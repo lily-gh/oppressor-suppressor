@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Word Replacer",
+    "name": "Oppressor Suppressor",
     "version": "1.0",
     "description": "Makes news outlets easier to digest.",
     "permissions": ["activeTab"],
@@ -16,11 +16,11 @@
     },
     "action": {
       "default_icon": "icon.png",
-      "default_title": "Word Replacer"
+      "default_title": "Oppressor Suppressor"
     },
     "browser_specific_settings": {
       "gecko": {
-        "id": "word-replacer@example.com",
+        "id": "oppressor-suppressor.po8c3",
         "strict_min_version": "109.0"
       }
     }

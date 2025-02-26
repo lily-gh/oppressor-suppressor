@@ -1,14 +1,15 @@
 // Determine the replacement word based on the webpage's language
 const isPortuguese = document.documentElement.lang.startsWith("pt");
 const replacement1 = isPortuguese ? "Laranja Irritante" : "Annoying Orange";
-const replacement1b = isPortuguese ? "Laranja Irritante" : "Annoying Orange";
 const replacement2 = isPortuguese ? "Kiko dos Foguetes" : "Phony Stark";
+const replacement2b = isPortuguese ? "Kiko" : "Phony";
 
 const replacements = {
     "Donald Trump": replacement1,
-    "Trump": replacement1b,
+    "Trump": replacement1,
     "Elon Musk": replacement2,
     "Musk": replacement2,
+    "Elon": replacement2b,
     "Jeff Bezos": "Bald Guy Kazoo",
     "Bezos": "Bald Guy",
     "Mark Zuckerberg": "Fart Chuckleberg",

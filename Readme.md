@@ -2,6 +2,12 @@
 
 This is a browser extension that aims to make news outlets easier on the mind when reading by replacing certain names that can trigger negative emotions with their goofy-though-accurate counterparts in webpages.
 
+## Preview
+ <details>
+  <summary>This is how news websites look like with this extension. (click to expand)</summary>
+  
+  ![Demo](demo.png)
+</details>
 
 ## Installation
 
