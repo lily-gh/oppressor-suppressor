@@ -1,27 +1,37 @@
 {
-    "manifest_version": 3,
-    "name": "Oppressor Suppressor",
-    "version": "1.0",
-    "description": "Makes news outlets easier to digest.",
-    "permissions": ["activeTab"],
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["content.js"]
-      }
-    ],
-    "icons": {
-      "48": "icon.png",
-      "128": "icon.png"
-    },
-    "action": {
-      "default_icon": "icon.png",
-      "default_title": "Oppressor Suppressor"
-    },
-    "browser_specific_settings": {
-      "gecko": {
-        "id": "oppressor-suppressor.po8c3",
-        "strict_min_version": "109.0"
-      }
+  "manifest_version": 3,
+  "name": "Oppressor Suppressor",
+  "version": "1.0",
+  "description": "Makes news outlets easier to digest.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_icon": "icon.png",
+    "default_title": "Oppressor Suppressor"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "oppressor-suppressor.po8c3",
+      "strict_min_version": "109.0"
     }
   }
+}

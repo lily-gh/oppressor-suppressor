@@ -1,3 +1,6 @@
+// Active by default
+let isActive = true;
+
 // Determine the replacement word based on the webpage's language
 const isPortuguese = document.documentElement.lang.startsWith("pt");
 const replacement1 = isPortuguese ? "Laranja Irritante" : "Annoying Orange";
@@ -29,8 +32,28 @@ function replaceText(node) {
     }
 }
 
-// Start the replacement process on the document body
-replaceText(document.body);
+function processDocument() {
+    if (isActive) {
+        replaceText(document.body);
+    }
+}
+
+chrome.storage.local.get(["isActive"], (result) => {
+    isActive = result.isActive !== false; // Default to true if not set
+    chrome.storage.local.set({ isActive }, () => {}); // Save the new state
+    processDocument();
+});
+
+// Listen for messages from the background script
+chrome.runtime.onMessage.addListener((message) => {
+    if (message.action === "activate") {
+        isActive = true;
+        processDocument(); // Re-run replacement if activated
+    } else if (message.action === "deactivate") {
+        isActive = false;
+        // reload?
+    }
+});
 
 // Observe dynamic changes to the DOM
 const observer = new MutationObserver((mutations) => {
