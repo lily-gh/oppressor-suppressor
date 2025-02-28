@@ -23,8 +23,12 @@ const replacements = {
 function replaceText(node) {
     // Iterate over all text nodes in the document
     if (node.nodeType === Node.TEXT_NODE) {
-        for (const [search, replace] of Object.entries(replacements)) {
-            node.textContent = node.textContent.replace(new RegExp(search, "gi"), replace);
+        for (const search of Object.keys(replacements)) {
+            const replacementRegex = new RegExp(search, "gi");
+            const replacedText = node.textContent.replace(replacementRegex, replacements[search]);
+            if (replacedText !== node.textContent) {
+                node.textContent = replacedText;
+            }
         }
     } else {
         // Recursively process child nodes
@@ -40,7 +44,7 @@ function processDocument() {
 
 chrome.storage.local.get(["isActive"], (result) => {
     isActive = result.isActive !== false; // Default to true if not set
-    chrome.storage.local.set({ isActive }, () => {}); // Save the new state
+    chrome.storage.local.set({ isActive }, () => { }); // Save the new state
     processDocument();
 });
 
@@ -55,6 +59,12 @@ chrome.runtime.onMessage.addListener((message) => {
     }
 });
 
+// Observe dynamic changes to the DOM
+const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach(replaceText);
+    });
+});
 
 observer.observe(document.body, {
     childList: true,
