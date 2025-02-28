@@ -18,14 +18,14 @@ The extension can be disabled by clicking on the extension icon in the browser. 
 ## Installation
 #### Chrome / Edge / Opera / Brave
 
-1. Download [the latest release](https://github.com/lily-gh/oppressor-suppressor/archive/refs/tags/v1.0.zip) or clone/download this repository to your local machine and unzip it.
+1. Download [the latest release](https://github.com/lily-gh/oppressor-suppressor/archive/refs/tags/v1.1.zip) or clone/download this repository to your local machine and unzip it.
 2. Open Chrome and go to `chrome://extensions/` (or `edge://extensions/` or `opera://extensions/` or `brave://extensions`).
 3. Enable "Developer mode" (toggle in the top-right corner).
 4. Click "Load unpacked" and select the folder containing the extension files.
 
 #### Firefox
 
-1. Download [the latest release](https://github.com/lily-gh/oppressor-suppressor/archive/refs/tags/v1.0.zip) or clone/download this repository to your local machine and unzip it.
+1. Download [the latest release](https://github.com/lily-gh/oppressor-suppressor/archive/refs/tags/v1.1.zip) or clone/download this repository to your local machine and unzip it.
 2. Open Firefox and go to `about:debugging`.
 3. Click "This Firefox" in the sidebar.
 4. Click "Load Temporary Add-on" and select the `manifest.json` file from the extension folder.
