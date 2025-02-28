@@ -55,12 +55,6 @@ chrome.runtime.onMessage.addListener((message) => {
     }
 });
 
-// Observe dynamic changes to the DOM
-const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-        mutation.addedNodes.forEach(replaceText);
-    });
-});
 
 observer.observe(document.body, {
     childList: true,
